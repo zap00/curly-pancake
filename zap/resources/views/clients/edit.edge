@@ -1,0 +1,25 @@
+<!-- resources/views/clients/edit.edge -->
+
+@extends('layouts.master')
+
+@section('content')
+  <h1>Edit Client</h1>
+  <form method="POST" action="{{ route('clients.update', { id: client.id }) }}">
+    @csrf
+    @method('PUT')
+
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" value="{{ client.name }}" required>
+    <br>
+
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email" value="{{ client.email }}" required>
+    <br>
+
+    <label for="phone">Phone:</label>
+    <input type="text" name="phone" id="phone" value="{{ client.phone }}">
+    <br>
+
+    <button type="submit">Update Client</button>
+  </form>
+@endsection

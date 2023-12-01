@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Settings</title>
+    {{ style('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css') }}
+    {{ style('style') }}
+    {{ script('https://code.jquery.com/jquery-3.3.1.slim.min.js') }}
+</head>
+<body>
+    <div class="container-fliud">
+        @include('settings.navbar')
+        @!section('content')
+     <div class="container">
+      <div class="edit-profile">
+        <div class="row">
+         <div class="col-md-4  bg-white p-3 mt-5 shadow no-border rounded offset-md-4">
+          <div class="float-right">
+            <a href="/" class="btn btn-outline-dark ">back</a>
+            </div>
+            <br>
+            <h3>Edit your profile</h3>
+            <form action="{{ route('profiles.update', { id: user.id }) }}" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="username">change username</label>
+                <input type=" username" class="form-control" id="username" name="username" value="{{ auth.user.username }}" placeholder="Enter Fullname">
+                {{ elIf('<span class=text-danger>$self</span>', getErrorFor('username'), hasErrorFor('username')) }}
+            </div>
+            <div class="form-group">
+                <label for="email">change email address</label>
+                <input type="email" class="form-control" id="email" name="email" value="{{ auth.user.email }}" placeholder="Email Address">
+                {{ elIf('<span class=text-danger>$self</span>', getErrorFor('email'), hasErrorFor('email')) }}
+            </div>
+            <div class="form-group">
+                <label for="pasword">change password</label>
+                <input type="password" class="form-control" id="password" name="password" value="{{ auth.user.password }}" placeholder="New Password">
+                {{ elIf('<span class=text-danger>$self</span>', getErrorFor('password'), hasErrorFor('password')) }}
+            </div>
+            <div class="form-group">
+              <label for="avatar">upload avatar</label>
+              <input type="file" id="avatar" name="avatar">
+            </div>
+              <!-- Add more fields for editing profile information -->
+            <div class="text-center">
+              <button type="submit" class="button submit-button">Save Changes</button>
+            </div>
+            </form>
+         </div>
+        </div>
+      </div>
+     </div>
+    </div>
+    
+    {{ script('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js') }}
+
+    <footer>
+      <p>&copy; 2023 Your App. All rights reserved.</p>
+      <p>&copy; Square Inc.</p>
+    </footer>
+</body>
+</html>

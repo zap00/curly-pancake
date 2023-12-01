@@ -1,0 +1,42 @@
+<!-- resources/views/invoices/edit.edge -->
+
+@extends('layouts.master')
+
+@section('content')
+  <h1>Edit Invoice</h1>
+  <form action="{{ route('invoices.update', { id: invoice.id }) }}?_method=PUT" method="POST">
+    @csrf
+    @method('PUT')
+
+    <label for="client_id">Client:</label>
+    <select name="client_id" id="client_id">
+      @foreach (clients as client)
+        <option value="{{ client.id }}" {{ invoice.client_id === client.id ? 'selected' : '' }}>{{ client.name }}</option>
+      @endforeach
+    </select>
+    <br>
+
+    <label for="amount">Amount:</label>
+    <input type="text" name="amount" id="amount" value="{{ invoice.amount }}" required>
+    <br>
+
+    <label for="description">Description:</label>
+    <textarea name="description" id="description">{{ invoice.description }}</textarea>
+    <br>
+
+    <label for="due_date">Due Date:</label>
+    <input type="date" name="due_date" id="due_date" value="{{ invoice.due_date }}" required>
+    <br>
+
+    <button type="submit">Update Invoice</button>
+
+      @if(flashMessage('error'))
+      @component('components.alert', { type: 'danger', color: 'red' })
+        {{ flashMessage('error') }}
+      @endcomponent
+    @endif
+
+    @include('invoices.partials.form')
+
+  </form>
+@endsection

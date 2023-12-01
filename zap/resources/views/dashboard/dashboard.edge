@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>chirper dashboard</title>
+  {{ style('style') }}
+</head>
+<body>
+  <header>
+    <h1>Chirper Dashboard</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="{{ route('dashboard.clients') }}">Clients</a></li>
+      <li><a href="{{ route('dashboard.settings') }}">Settings</a></li>
+      <li><a href="{{ route('dashboard.deposits') }}">Deposits</a></li>
+      <li><a href="{{ route('dashboard.invoices') }}">Flashings</a></li>
+      <!-- Add more navigation links as needed -->
+    </ul>
+  </nav>
+  <section>
+    <div class="dashboard">
+      <div class="header">
+        <h2> Welcome to Your Account, {{ auth.user.username }}!</h2>
+      </div>
+  
+      <!-- Display Balance -->
+      <div class="balance-section">
+        <h3>Your Balance</h3>
+        <p class="balance-amount">$34,305.67</p>
+      </div>
+  
+      <!-- Display VISA Card Details -->
+      <div class="visa-details-section">
+        <h2>Visa Credit Card</h2>
+        <p class="card-number">Card Number: **** **** **** 5675</p>
+        <p>Cardholder Name: {{ auth.user.username }}</p>
+        <p>Expiration Date: 12/23</p>
+        <!-- Add more card details as needed -->
+      </div>
+  
+      <!-- Content Section -->
+      <div class="content-section">
+        <h3>Latest Transactions</h3>
+        <ul class="transactions-list">
+          <!-- Display a list of latest transactions -->
+          <li>Transaction 1 - $50.00</li>
+          <li>Transaction 2 - $30.00</li>
+          <li>Transaction 3 - $20.00</li>
+        </ul>
+      </div>
+
+      <div class="icons-section">
+        <div class="icon">
+          <svg class="transactions-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+             </svg>
+             <p>Transactions</p>
+            </div>
+            
+      <div class="icon">
+        <svg class="settings-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
+           </svg>
+           <p>Settings</p>
+          </div>
+      
+      <div class="icon">
+        <svg class="support-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-life-preserver" viewBox="0 0 16 16">
+      <!-- SVG path data -->
+           </svg>
+          <p>Support</p>
+         </div>
+    </div>
+  </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Chirper App. All rights reserved.</p>
+    <p>&copy; Square Inc.
+</footer>
+</body>
+</html>

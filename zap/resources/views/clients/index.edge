@@ -1,0 +1,46 @@
+<!-- resources/views/clients/index.edge -->
+
+@extends('clients.master')
+
+@section('content')
+
+<div class="container">
+
+  <div class="text-center">
+      @if(flashMessage('successmessage'))
+          <span class="alert alert-success p-1">{{ flashMessage('successmessage') }}</span>
+      @endif
+  </div>
+
+  <div class="row">
+    <h1>Clients</h1>
+    <a href="{{ route('clients.create') }}">Create New Client</a>
+    <ul>
+      @each(client in clients)
+          <div class="col-md-4 mb-4 client-wrapper">
+            <li>
+              <a href="{{ route('clients.show') }}" class="w-100">
+                {{ client.name }} - {{ client.email }}
+              </a>
+            </li>
+            <div class="card shadow-lg bg-dark text-white">
+              <div class="card-body">
+                <blockclient class="blockclient mb-0">
+                  <footer class="blockclient-footer">
+                    <cite title="Source Title"> {{ client.name }}</cite>
+                  </footer>
+                  </blockclient>
+                  @if(auth.client.id == client.client_id)
+                  <div>
+                    <a href="{{ route('clients.edit') }}" class="btn btn-primary">edit</a>
+                    <a href="{{ route('clients.delete') }}" class="btn btn-danger">delete</a>
+                  </div>
+                  @endif
+                </div>
+              </div> 
+            </div>  
+          @else 
+        <div class="col-md-12 empty-invoice text-center"></div>
+      @endeach
+  </ul>
+@endsection

@@ -1,0 +1,35 @@
+@layout('clients/master')
+
+@section('content')
+  <div class="container ">
+    <div class="row">
+        <div class="col-md-4  bg-white p-3 mt-5 shadow no-border rounded offset-md-4">
+          <div class="float-right">
+            <a href="/" class="btn btn-outline-dark ">back</a>
+            </div>
+            <br>
+          <form method="POST" action="{{route('clients.store')}}">
+            {{ csrfField() }}
+              <div class="form-group">
+                <label for="name">Client name</label>
+                <input type="text" class="form-control" id="name" name="name"  value="{{old('name','')}}" placeholder="Enter client name">
+                {{ elIf('<span class=text-danger>$self</span>', getErrorFor('name'), hasErrorFor('name')) }}
+              </div>
+              <div class="form-group">
+                <label for="email">Client email address</label>
+                <input type="email" class="form-control" id="email"  name="email" value="{{old('email','')}}" placeholder="Enter client email">
+                {{ elIf('<span class=text-danger>$self</span>', getErrorFor('email'), hasErrorFor('email')) }}
+              </div>
+              <div class="form-group">
+                <label for="phone">Client phone number</label>
+                <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter client phone number">
+                {{ elIf('<span class=text-danger>$self</span>', getErrorFor('phone'), hasErrorFor('phone')) }}
+              </div>
+              <div class="text-center">
+                  <button type="submit" class="btn submit-button">Enroll</button>
+              </div>
+          </form>
+        </div>
+    </div> 
+  </div>
+@endsection

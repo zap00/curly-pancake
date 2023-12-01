@@ -1,0 +1,12 @@
+@layout('layouts/master')
+
+@section('body')
+  <section class="max-w-xl mx-auto py-20">
+    <div class="flex items-center">
+      <div class="ml-6">
+        <h2 class="section-title">{{ auth.user.fullName }}</h2>
+        <h2 class="section-subtitle">{{ auth.user.email }}</h2>
+      </div>
+    </div>
+  </section>
+@endsection

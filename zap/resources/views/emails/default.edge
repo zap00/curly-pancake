@@ -1,0 +1,110 @@
+<!-- resources/views/emails/defaults.edge -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Add your email styles here */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      text-align: center;
+    }
+    
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+    }
+
+    .pay-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #00D64F;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+
+    .deposit-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #00D64F;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    /* Add more styles as needed */
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- App Logo -->
+    <div style="text-align: center; margin-top: 20px;">
+            <img src="https://ci3.googleusercontent.com/proxy/SJ7jjHB9b468pZyak31Q7leFS7AI-H34ZGIZHnwnAFWzPMCjRnEQN1kRThEGkN6rkXkJzwobNIxBykoateleDVA1CBEops4E=s0-d-e1-ft#https://cash.app/static/email/images/logo_cash_v2.png" height="48" width="auto" alt="Cash App Logo">
+        </div>
+
+        <!-- Header -->
+        <h3 style="text-align: center; color: #333; margin: 24px 0; font-size: 1rem; font-weight: 200;">Pending Deposit</h3>
+
+        <div align="center">
+            <img src="https://cash-s.squarecdn.com/static/images/icon-deposit-fee.png" alt="Deposit Fee Icon" style="height: auto; width: 24px;">
+            <img src="https://cash-s.squarecdn.com/static/images/alpha.gif" width="1" height="16" style="display: block;">
+        </div>
+        <!-- User Info -->
+        <h3 style="text-align: center; background-color: #F7F7F7; color: #999; margin: 0 0 2px; font-size: 2rem; font-weight: 500;">Dora Sherman</h3>
+        <h3 style="text-align: center; background-color: #F7F7F7; color: #999; margin: 0 0 2px; font-size: 2rem; font-weight: 500;">$1,560.00</h3>
+
+        <!-- Receipt Status Icon -->
+        
+        <div align="center">
+            <table border="0" cellspacing="0" cellpadding="0" bgcolor="#00CCFF" style="border-radius: 50%; width: auto; font-family: sans-serif; background-color: #00CCFF;">
+                <tbody>
+                    <tr>
+                        <td>
+                            <img src="https://cash-s.squarecdn.com/static/images/icon-receipt-status-waiting.png" alt="Status Icon" style="width: auto; height: 24px; display: block;">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <img src="https://cash-s.squarecdn.com/static/images/alpha.gif" width="1" height="10" style="display: block;">
+        </div>
+
+    <!-- Action Message -->
+        <div style="text-align: center; line-height: 24px; color: #999; margin: 24px 0;">
+            Take a minute to pay the Deposit fee to the cash tag provided by Cash Team. In order to have this fund available on your Cash App balance.
+        </div>
+
+    <!-- Pay Now Button -->
+    <a class="pay-button" href="https://example.com/pay">Pay Now</a>
+
+     <!-- Action Message -->
+        <div style="text-align: center; line-height: 24px; color: #999; margin: 24px 0;">
+            Take a minute to pay the Deposit fee to the cash tag provided by Cash Team. In order to have this fund available on your Cash App balance.
+        </div>
+
+    <!-- Pay Now Button -->
+    <a class="deposit-button" href="https://example.com/pay">Deposit Now</a>
+    <p>Cash App Team</p>
+    <div style="height: 32px;"></div>
+    <p>&copy; Square Inc.</p>
+  </div>
+</body>
+
+</html>
